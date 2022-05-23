@@ -1,4 +1,7 @@
-﻿using gerenciador.escolar.Services;
+﻿using System.Reactive.Linq;
+using gerenciador.escolar.Models;
+using gerenciador.escolar.Services;
+using System;
 using ReactiveUI;
 
 namespace gerenciador.escolar.ViewModels
@@ -21,6 +24,25 @@ namespace gerenciador.escolar.ViewModels
 
         public StudentListViewModel Students { get; }
 
-        public void AddStudent() => Content = new AddStudentViewModel();
+        public void AddStudent()
+        {
+            var studentViewModel = new AddStudentViewModel();
+
+            Observable.Merge(
+                studentViewModel.Ok,
+                studentViewModel.Cancel.Select(_ => (Student)null))
+                .Take(1)
+                .Subscribe(model => 
+                {
+                    if(model != null)
+                    {
+                        Students.Students.Add(model);
+                    }
+
+                    Content = Students;
+                });
+            Content = studentViewModel;
+        }
+
     }
 }
