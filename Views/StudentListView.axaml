@@ -13,7 +13,15 @@
         <ItemsControl.ItemTemplate>
             <DataTemplate>
             <CheckBox Margin="4"
-                      Content="{Binding Name}"/>
+                Content="{Binding Name}"/>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Items="{Binding Students}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+            <TextBox Margin="4"
+                      Content="{Binding Id}"/>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
         </ItemsControl>    

@@ -1,8 +1,17 @@
+using System;
+using System.Collections.Generic;
+
 namespace gerenciador.escolar.Models;
 
-public class Student
+public class Student : IdentificationBase<Guid>
 {
-    public string Name { get; set; }
-    public string RegistrationNumber { get; set; }
+    public Student(string name, HashSet<(Discipline, float[])> grades)
+    {
+        Name = name;
+        Grades = grades;
+    }
+
+    public string Name { get; }
+    public HashSet<(Discipline, float[])> Grades  { get; private set; }
 }
 

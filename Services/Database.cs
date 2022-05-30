@@ -5,9 +5,16 @@ namespace gerenciador.escolar.Services;
 
 public class Database
 {
-    public IEnumerable<Student> GetStudents() => new []
+
+    private List<Student> students => new List<Student>
     {
-        new Student { Name = "Jordan", RegistrationNumber = "31023939" },
-        new Student { Name = "Maria", RegistrationNumber = "12324123" }
+        new Student("Jordan", 
+                new HashSet<(Discipline, float[])> { (new Discipline("Calculo C", new string[] {"Séries de Fourrier", "EDO 1 ordem", "EDO 2 ordem"}, "MATA04", "T1"), new float[] { 3.2f, 5.0f, 10 })}),
+        new Student("Maria", 
+                new HashSet<(Discipline, float[])> { (new Discipline("Calculo C", new string[] {"Séries de Fourrier", "EDO 1 ordem", "EDO 2 ordem"}, "MATA04", "T2"), new float[] { 7.2f, 9f, 10f })})
     };
+
+    public IEnumerable<Student> GetStudents() => students;
+
+    public void AddStudent(Student student) => students.Add(student);
 }
