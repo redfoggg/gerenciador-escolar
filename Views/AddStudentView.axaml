@@ -10,8 +10,5 @@
     <TextBox AcceptsReturn="False"
              Text="{Binding Name}"
              Watermark="Enter the student name"/>
-    <TextBox AcceptsReturn="False"
-             Text="{Binding RegistrationNumber}"
-             Watermark="Enter the student registration number"/>
   </DockPanel>
 </UserControl>

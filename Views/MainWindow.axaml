@@ -3,7 +3,7 @@
         xmlns:views="clr-namespace:gerenciador.escola.Views"
         x:Class="gerenciador.escolar.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Width="200" Height="400"
+        Width="600" Height="400"
         Title="gerenciador.escolar"
         Content="{Binding Content}">
 </Window>

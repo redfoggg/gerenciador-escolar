@@ -12,16 +12,14 @@
         <ItemsControl Items="{Binding Students}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-            <CheckBox Margin="4"
-                Content="{Binding Name}"/>
+            <TextBlock Text="{Binding Id}" />
             </DataTemplate>
         </ItemsControl.ItemTemplate>
         </ItemsControl>
         <ItemsControl Items="{Binding Students}">
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-            <TextBox Margin="4"
-                      Content="{Binding Id}"/>
+            <TextBlock Text="{Binding Name}" />
             </DataTemplate>
         </ItemsControl.ItemTemplate>
         </ItemsControl>    

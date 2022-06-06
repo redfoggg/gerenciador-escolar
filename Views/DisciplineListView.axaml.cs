@@ -3,9 +3,9 @@ using Avalonia.Markup.Xaml;
 
 namespace gerenciador.escolar.Views
 {
-    public partial class StudentListView : UserControl
+    public partial class DisciplineListView : UserControl
     {
-        public StudentListView()
+        public DisciplineListView()
         {
             InitializeComponent();
         }

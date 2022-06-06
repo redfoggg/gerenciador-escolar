@@ -8,7 +8,7 @@ public class Discipline : IdentificationBase<string>
         Topics = topics;
         Classes = classes;
     }
-    
+
     public string Name { get; }
     public string[] Topics { get; }
     public string Classes { get; }

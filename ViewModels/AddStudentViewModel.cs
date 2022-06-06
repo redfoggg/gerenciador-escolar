@@ -4,21 +4,14 @@ using ReactiveUI;
 
 namespace gerenciador.escolar.ViewModels;
 
-public class AddStudentViewModel : ViewModelBase
+public class AddStudentViewModel : ReactiveObject
 {
     string name;
-    string registrationNumber;
 
     public string Name 
     {
         get => name;
         set => this.RaiseAndSetIfChanged(ref name, value);
-    }
-    
-    public string RegistrationNumber 
-    {
-        get => registrationNumber;
-        set => this.RaiseAndSetIfChanged(ref registrationNumber, value);
     }
     
     public ReactiveCommand<Unit, Student> Ok { get; }
@@ -32,7 +25,7 @@ public class AddStudentViewModel : ViewModelBase
             x => !string.IsNullOrWhiteSpace(x));
 
         Ok = ReactiveCommand.Create(
-                () => new Student { Name = Name, RegistrationNumber = RegistrationNumber }, 
+                () => new Student(Name), 
                 okEnabled);
         Cancel = ReactiveCommand.Create(() => { });
     }

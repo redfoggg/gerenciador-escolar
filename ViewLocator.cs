@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using gerenciador.escolar.ViewModels;
+using ReactiveUI;
 
 namespace gerenciador.escolar
 {
@@ -24,7 +24,7 @@ namespace gerenciador.escolar
 
         public bool Match(object data)
         {
-            return data is ViewModelBase;
+            return data is ReactiveObject;
         }
     }
 }
