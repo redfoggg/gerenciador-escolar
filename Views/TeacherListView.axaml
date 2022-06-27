@@ -4,5 +4,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="gerenciador.escolar.Views.TeacherListView">
-  Welcome to Avalonia!
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom"
+            Command="{Binding $parent[Window].DataContext.AddTeacher}">
+            Add a teacher
+        </Button>
+        <Button DockPanel.Dock="Bottom"
+            Command="{Binding $parent[Window].DataContext.BackToMenu}">
+            Back to Menu 
+        </Button>
+        <ItemsControl Items="{Binding Teachers}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+            <TextBlock Text="{Binding Id}" />
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <ItemsControl Items="{Binding Teachers}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+            <TextBlock Text="{Binding Name}" />
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+        </ItemsControl>    
+    </DockPanel>
 </UserControl>

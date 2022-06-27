@@ -7,7 +7,11 @@
     <DockPanel>
         <Button DockPanel.Dock="Bottom"
             Command="{Binding $parent[Window].DataContext.AddStudent}">
-            Add an student
+            Add a student
+        </Button>
+        <Button DockPanel.Dock="Bottom"
+            Command="{Binding $parent[Window].DataContext.BackToMenu}">
+            Back to Menu 
         </Button>
         <ItemsControl Items="{Binding Students}">
         <ItemsControl.ItemTemplate>
